@@ -1,5 +1,4 @@
-// C++ code
-//
+
 void setup() // wird nur einmal ausgeführt
 {
   pinMode(PIN0, OUTPUT);
@@ -16,27 +15,27 @@ void loop() // wird kontinuierlich ausgeführt
 {
   digitalWrite(PIN6, LOW);
   digitalWrite(PIN0, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000);
   digitalWrite(PIN7, LOW);
   digitalWrite(PIN1, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   digitalWrite(PIN0, LOW);
   digitalWrite(PIN2, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   digitalWrite(PIN1, LOW);
   digitalWrite(PIN3, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   digitalWrite(PIN2, LOW);
   digitalWrite(PIN4, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   digitalWrite(PIN3, LOW);
   digitalWrite(PIN5, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   digitalWrite(PIN4, LOW);
   digitalWrite(PIN6, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   digitalWrite(PIN5, LOW);
   digitalWrite(PIN7, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000); 
   
 }

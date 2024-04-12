@@ -2,20 +2,20 @@
 
 ## erstes Erfolgserlebnis
 
-![Image of a curcuit containing a arduino and a breadboard](pngs/shining_LED.png)
+![Image of a curcuit containing a arduino and a breadboard. A black cable connects the Ground Port of the Arduino through a resistor with a red LED. A red cable connects the 5 Volt Port of the Arduino with the other side of the LED](pngs/shining_LED.png)
 Bild 1: Schaltkreis einer einfachen leuchtenden LED
 
-![Image of a curcuit containing a arduino and a breadboard](pngs/blinking_LED.png)
+![Image of a curcuit containing a arduino and a breadboard. It is similar to the last picture except the Red Cable now arises from the Digital Port 13 of the Arduino](pngs/blinking_LED.png)
 Bild 2: Schaltkreis mit blinkender LED  
-Dazu gehört der Quellcode der Datei [blinking.cpp](src/blinking.cpp)
+Dazu gehört der Quellcode der Datei [blinking.ino](src/blinking/blinking.ino)
 
-![Image of a curcuit containing a arduino and a breadboard](pngs/multiple_LED.png)
+![Image of a curcuit containing a arduino and a breadboard. The 8  digital Ports 0 to 7 of the Arduino are each connected to a LED through a resistor. The other side of the LEDs is connected to the Ground Port of the Arduino.](pngs/multiple_LED.png)
 Bild 3: Schaltkreis mit mehreren LED die in einer Laola-Welle durchlaufen.  
-Dazu gehört der Quellcode der Datei [laola.cpp](src/laola.cpp)
+Dazu gehört der Quellcode der Datei [laola.ino](src/laola/laola.ino)
 
 ## Controller - Microprozessor
 
-Ersteres enthällt zusätzlich zum Porzessor noch Peripheriebausteine wie:  
+Ersteres enthällt zusätzlich zum Prozessor noch Peripheriebausteine wie:  
 analog-digital digital-analog Wandler, Timerbaustein
 
 ## Pull-Up/ -Down Widerstand

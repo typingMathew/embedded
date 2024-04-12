@@ -1,5 +1,4 @@
-// C++ code
-//
+
 void setup() // wird nur einmal ausgeführt
 {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -8,7 +7,7 @@ void setup() // wird nur einmal ausgeführt
 void loop() // wird kontinuierlich ausgeführt
 {
   digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000);
   digitalWrite(LED_BUILTIN, LOW);
-  delay(1000); // Wait for 1000 millisecond(s)
+  delay(1000);
 }
