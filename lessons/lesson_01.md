@@ -4,7 +4,7 @@
 
 ### Time to shine
 
-![Image of a curcuit containing a arduino and a breadboard. A black cable connects the Ground Port of the Arduino through a resistor with a red LED. A red cable connects the 5 Volt Port of the Arduino with the other side of the LED](media/shining_LED.png)  
+![Image of a curcuit containing a arduino and a breadboard. A black cable connects the Ground Port of the Arduino through a resistor with a red LED. A red cable connects the 5 Volt Port of the Arduino with the other side of the LED. The LED is powered on.](media/shining_LED.png)  
 Schaltkreis einer einfachen leuchtenden LED. Dazu wird der 5V sowie der Ground Ausgang des Arduinos mit der LED über einen Vorwiderstand verbunden.  
 
 ### Blinking

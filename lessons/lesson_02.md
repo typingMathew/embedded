@@ -28,7 +28,7 @@ Dazu gehört der Quellcode der Datei [analog_in.ino](src/analog_in/analog_in.ino
 
 ### Analoge Eingänge digital Darstellen
 
-![Video of a curcuit containing a arduino and a breadboard. The 8 digital Ports 0 to 7 of the Arduino are each connected to a LED. The eight LEDs are in a row on the breadboard and represent a binary 8 Bit counter. The other side of each of the LEDs is connected to the Ground Port of the Arduino through a resistor. There is also a potentiometer on the breadboard, which is connected to the ground, analog input A0 and the 5V output of the arduino. The potentiometer is being turned. For each turn of it clockwise, the binary counter increases. For each turn counter clockkwise it decreases.](media/map_pot_to_LED.gif)  
+![Video of a curcuit containing a arduino and a breadboard. The 8 digital Ports 0 to 7 of the Arduino are each connected to a LED. The eight LEDs are in a row on the breadboard and represent a binary 8 Bit counter. The other side of each of the LEDs is connected to the Ground Port of the Arduino through a resistor. There is also a potentiometer on the breadboard, which is connected to the ground, analog input A0 and the 5V output of the arduino. The potentiometer is being turned. For each turn of it clockwise, the binary counter increases. For each turn counter clockwise it decreases.](media/map_pot_to_LED.gif)  
 Potentiometer, dessen umgewandelter 10 Bit Wert mit der map Funktion auf eine 8 Bit Zahl abgebildet wird, um ihn dann durch einen binären 8 Bit LED Counter darzustellen.  
 Die map-Funktion: ordnet den Wert eines Zahlenbereiches einem anderen Zahlenbereich zu. Aufruf: map(value, from_lowerbound, from_upperbound, to_lowerbound, to_upperbound)  
 Dazu gehört der Quellcode der Datei [map_pot_to_led.ino](src/map_pot_to_led/map_pot_to_led.ino)
@@ -47,7 +47,7 @@ Ein Register aus dem nur gelesen werden kann. Wird genutzt um eingehende Signale
 
 #### Port Register
 
-Ein Register in das auszugebende Signale geschrieben werden können. Ist der entsprechende Pin als Eingabe definiert, dann wird in diesem Register der Defaultwert des Pins festgelegt. Der Arduino besitzt 3 Port Register. Port D repräsentiert die Digitalen PIN 0 bis 7. Port B die Digitalen PIN 8 bis 13 und Port C die analogen PIN 0-5.
+Ein Register in das auszugebende Signale geschrieben werden können. Ist der entsprechende Pin als Eingabe definiert, dann wird in diesem Register der Defaultwert des Pins festgelegt (Ein-/ Ausschalten des Pullup Widerstands). Der Arduino Uno besitzt 3 Port Register. Port D repräsentiert die Digitalen PIN 0 bis 7. Port B die Digitalen PIN 8 bis 13 und Port C die analogen PIN 0-5.
 
 ### RC/ LC Schwingkreis
 
