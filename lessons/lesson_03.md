@@ -11,9 +11,13 @@ Der Arduino besitzt zwei 8 Bit und ein 16 Bit Timer. Bei einer CPU Frequenz von 
 
 ### Interrupt - Unterbrechung
 
-Wenn ein Interrupt ausgelöst wird, wird die aktuelle Verarbeitung unterbrochen, es wird zu einer anderen Stelle gesprungen, eine ISR (Interrupt Service Routine) ausgeführt und anschließend wieder zum normalen Programmfluss zurückgescprungen. Über einen solchen (zeitbasierten) Interrupt lässt sich beispielsweise ein Scheduler realisieren.
+Wenn ein Interrupt ausgelöst wird, wird die aktuelle Verarbeitung unterbrochen, es wird zu einer anderen Stelle gesprungen, eine ISR (Interrupt Service Routine) ausgeführt und anschließend wieder zum normalen Programmfluss zurückgesprungen. Über einen solchen (zeitbasierten) Interrupt lässt sich beispielsweise ein Scheduler realisieren.
 
-## HA
+## Rolltor
 
-Zeichnen eines Ablaufdiagramms eines automatisierten Rolltores mit folgenden Bestandteilen:
-Mikrocontroller, Motor, H-Brücke, 2 Taster (hoch, runter), 2 Endschalter (wann schranke ganz oben/ unten), 2*7 Segment für 10s counter. (+ Ampel, + Notaus)
+Aufgabe:  
+Zeichnung eines Ablaufdiagramms eines automatisierten Rolltores mit folgenden Bestandteilen:
+Mikrocontroller, Motor, H-Brücke, 2 Taster (hoch, runter), 2 Endschalter (wann schranke ganz oben/ unten), 2*7 Segment für 10s counter. (Zusatz: Ampel,  Notaus)  
+Lösung:
+![A really complex activity diagramm](media/rolltor.png)  
+[Quelltext](src/rolltor/rolltor.puml)

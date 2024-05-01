@@ -1,0 +1,46 @@
+@startuml rolltor
+scale 1200 width
+(*) --> "boot" as b
+
+"warten_unten" as w_down --> w_down
+"warten_oben" as w_up --> w_up
+
+partition "Sequenz hoch"{
+    w_down -->[taster_hoch] "H-Brücke hoch" as hb_up
+    hb_up --> "Motor an" as m_up
+    if "schalter_erreicht" then
+        -->[true] w_up
+    else
+        -->[false] m_up
+}
+
+
+
+partition "Sequenz runter"{
+    "10s timer" as ts --> "H-Brücke unten" as hb_down
+    hb_down --> "Motor an" as m_down
+    if "schalter_erreicht" then
+    -->[true] w_down
+    else
+        -->[false] m_down
+}
+
+b --> if schalter_unten then
+    -->[true] w_down
+else
+    -->[false] if schalter_oben then
+        -->[true] w_up
+    else
+        -->[false] ts
+endif
+
+
+w_up -->[taster_runter] ts
+
+"Sequenz hoch" -d->[taster_runter] ts
+"Sequenz runter" -d->[taster_hoch] hb_up
+
+
+
+
+@enduml
