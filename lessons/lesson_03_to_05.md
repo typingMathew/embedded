@@ -44,7 +44,13 @@ Lösung:
 Hier zu sehen das Programm, jedoch noch ohne LED Ampel, Beeper und Notaus. #TODO  
 Siehe [rolltor.ino](src/rolltor/rolltor.ino)
 
-## HA
+## Türöffner
 
-- Gedanken über Projekt für Embedded 2 machen.  
-- Optional: Bau einer ALU mit 3-4 arithmetischen Befehlen  
+Anforderungen:
+Zwei Taster (T1 - auf, T2 - zu), Einen Ultraschallsensor S1, ein Microcontroller (Arduino), ein Servomotor M, ein LED-Streifen L (Standardmäßig Blau, wenn Tür aufgeht wird L proportional dazu Grün, wenn Tür offen Läuft Roter Punkt zurück (repräsentiert 8s Timer), dann geht Tür wieder zu).  
+
+### Umsetzung
+
+![Video of a really complex tinkercad programm.](media/tuer.gif)
+Für die Implementierung wurden die zwei Bibliotheken `Servo.h` (für die Ansteuerung des Servomotors) und `Adafruit_NeoPixel.h` (für die Ansteuerung des LED-Streifens) genutzt.
+Siehe [tuer.ino](src/tuer/tuer.ino)
