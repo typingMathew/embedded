@@ -1,4 +1,5 @@
-// arduino uno programm
+// Autor: Matteo Orschewsky
+
 // D0 --> Taster Tor hoch
 const int TASTER_TOR_HOCH = PIN0;
 // D1 --> Taster Tor runter
@@ -24,6 +25,7 @@ const int MOTOR_TOR_HOCH = A0;
 // A1 für die H-Brücke Motor Tor runter
 const int MOTOR_TOR_RUNTER = A1;
 
+volatile int timer_counter = 10;
 
 void setup(){
     // setzen der 7-Segment-Dekodierer als Ausgänge
@@ -34,6 +36,21 @@ void setup(){
     DDRD = 0b01110000;
     // setzen der Pull-Up Widerstände für die Taster und Schalter
     PORTD = 0b10001111;
+
+    // Timerkonfiguration für den 10s Timer
+    // set the timer conf registers of TCNT1 to 0 
+    TCCR1A = 0;
+    TCCR1B = 0;
+    // set the timer to 0
+    TCNT1 = 0;
+    // set the compare register (16 MHz / 16.000 tacts = 1 ms)
+    OCR1A = 16000;
+    // set the WGM12 setting (CTC - Clear Timer on Compare Match)
+    // this resets the counter when it reaches the value of OCR1A
+    TCCR1B |= (1 << WGM12);
+    // configure the timer to compare mode (where it compares the value of TCNT1 with OCR1A)
+    // throws an interrupt when the values are equal
+    TIMSK1 |= (1 << OCIE1A);
 }
 
 void loop(){
@@ -48,19 +65,38 @@ void loop(){
 }
 
 void ten_second_timer(){
-    // setzen der 7-Segment-Anzeige auf 10
-    int segment = 0b00010000;
-    PORTB = segment;
-    // warten 1s
-    delay(1000);
-    // zyklisches herunterzählen der 7-Segment-Anzeige
-    for (int i = 9; i >= 0; i--)
+    // setzen des Timercounters auf 0
+    timer_counter = 0;
+    // aktivieren des Timers
+    TCCR1B |= (1 << CS00);
+
+    int counter = 10;
+    while (counter > 0)
     {
-        segment = i;
-        PORTB = segment;
-        delay(1000);
+        if (timer_counter >= 1000) {
+            int segment;
+            if (counter == 10) {
+                // setzen der 7-Segment-Anzeige auf 10
+                segment = 0b00010000;
+                PORTB = segment;
+                counter--;
+            }
+            else {
+                segment = counter;
+                PORTB = segment;
+                counter--;
+            }
+            timer_counter = 0;
+        }
+        else{
+            delay(100);
+        }
     }
-    
+    // deaktivieren 7-Segment-Anzeige
+    PORTB = 0;
+    // deaktivieren des Timers
+    TCCR1B &= !(1 << CS00);
+            
 }
 
 void position_unten(){
@@ -91,4 +127,8 @@ void position_oben(){
     // Motor Tor stoppen
     digitalWrite(MOTOR_TOR_RUNTER, LOW);
     position_unten();
+}
+
+ISR(TIMER1_COMPA_vect) {
+    timer_counter++;
 }
